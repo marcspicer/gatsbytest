@@ -6,6 +6,8 @@ export const Anothercomponent = React.memo(() => {
       {"For now let it wrap in span"}
       <br />
       <FormattedMessage id="some" />
+      <br />
+      <FormattedMessage id="another" />
     </span>
   );
 });

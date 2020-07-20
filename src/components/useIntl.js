@@ -3,6 +3,11 @@ export const IntlContext = React.createContext("en");
 const yi_key = "__yi__intl__";
 
 export const initIntl = (obj) => {
+  try {
+    window;
+  } catch (e) {
+    return;
+  }
   if (!window[yi_key]) {
     window[yi_key] = { es: {}, en: {} };
   }
@@ -25,7 +30,11 @@ export const useIntl = () => {
 };
 
 const intl = (string, locale) => {
-  return window["__yi__intl__"] && window["__yi__intl__"][locale]
-    ? window["__yi__intl__"][locale][string]
-    : "";
+  try {
+    return window["__yi__intl__"] && window["__yi__intl__"][locale]
+      ? window["__yi__intl__"][locale][string]
+      : "";
+  } catch (e) {
+    return "";
+  }
 };

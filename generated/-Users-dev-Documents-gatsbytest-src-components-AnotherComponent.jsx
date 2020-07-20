@@ -6,13 +6,17 @@ export const Anothercomponent = React.memo(() => {
       {"For now let it wrap in span"}
       <br />
       {intl("some")}
+      <br />
+      {intl("another")}
     </span>;
 });
 initIntl({
   en: {
-    some: "Some"
+    some: "Some",
+    another: "another"
   },
   es: {
-    some: "Algunas"
+    some: "Algunas",
+    another: "another"
   }
 })
